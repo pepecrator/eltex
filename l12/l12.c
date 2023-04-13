@@ -122,32 +122,38 @@ int main()
             {
                 zd1();
                 getchar();
+                getc(stdin);
                 break;
             }
             case 2:
             {
                 zd2();
                 getchar();
+                getc(stdin);
                 break;
             }
             case 3:
             {
                 zd3();
                 getchar();
+                getc(stdin);
                 break;
             }
             case 4:
             {
                 zd4();
                 getchar();
+                getc(stdin);
                 break;
 
             }
             case 5:
             {
                 exit(1);
+                break;
             }
         }
+        getc(stdin);
     }
     return 0;
 }
