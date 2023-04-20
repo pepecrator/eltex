@@ -1,0 +1,24 @@
+binary: l24.o libcalk.so
+	gcc -o binary l24.o -L. -lcalk -Wl,-rpath,.
+
+l24.o: l24.c
+	gcc -c l24.c
+
+libcalk.so: plus.o minus.o del.o mul.o
+	gcc -shared -o libcalk.so plus.o minus.o del.o mul.o
+
+plus.o: plus.c
+	gcc -c -fPIC plus.c
+
+minus.o: minus.c
+	gcc -c -fPIC minus.c
+
+del.o: del.c
+	gcc -c -fPIC del.c
+
+mul.o: mul.c
+	gcc -c -fPIC mul.c
+
+clean:
+	rm -f *.o *.so binary
+

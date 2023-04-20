@@ -1,0 +1,33 @@
+binary: l24.o plus.so minus.so del.so mul.so
+	gcc l24.o -o binary -ldl 
+
+l24.o: l24.c
+	gcc -c l24.c
+
+plus.so: plus.o 
+	gcc -shared plus.o -o plus.so
+
+minus.so: minus.o
+	gcc -shared minus.o -o minus.so
+
+del.so: del.o
+	gcc -shared del.o -o del.so
+
+mul.so: mul.o
+	gcc -shared mul.o -o mul.so
+
+plus.o: plus.c
+	gcc -c -fPIC plus.c
+
+minus.o: minus.c
+	gcc -c -fPIC minus.c
+
+del.o: del.c
+	gcc -c -fPIC del.c
+
+mul.o: mul.c
+	gcc -c -fPIC mul.c
+
+clean:
+	rm -f *.o *.so binary
+
