@@ -1,0 +1,10 @@
+bin: l391.o  tcpC.o
+	gcc l391.o -o bin -pthread
+	gcc tcpC.o -o tcpC -pthread
+
+l391.o: l391.c
+	gcc -c l391.c
+	
+tcpC.o: tcpC.c
+	gcc -c tcpC.c
+

@@ -1,0 +1,8 @@
+bin: l392.o mq.o
+	gcc l392.o mq.o -o bin -pthread
+
+l392.o: l392.c
+	gcc -c l392.c
+
+mq.o: mq.c
+	gcc -c mq.c
